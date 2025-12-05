@@ -18,7 +18,6 @@ jobs:
       - name: run pytest
         run: pytest
 
-  jobs:
     run-system-test:
       runs-on: ubuntu-latest
       steps:
