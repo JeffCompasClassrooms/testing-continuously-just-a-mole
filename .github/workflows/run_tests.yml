@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with: 
-          repository:JeffCompasClassrooms/testing-units-f25-just-a-mole
+          repository: JeffCompasClassrooms/testing-units-f25-just-a-mole
 
       - name: install pytest
         run: pip install pytest
