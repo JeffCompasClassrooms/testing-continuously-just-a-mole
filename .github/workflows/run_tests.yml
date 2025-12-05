@@ -31,3 +31,25 @@ jobs:
 
       - name: run pytest
         run: pytest --spec
+  run-behave:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with: 
+          repository: JeffCompasClassrooms/testing-with-behave-just-a-mole
+      
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update Pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install dependincies
+        run: python -m pip install behave==1.2.6 behave-webdriver==0.3.1 selenium==3.141.0 urllib3==1.26.18 six==1.16.0
+
+      - name: Run utahtech
+        working-directory: ./utahtech
+        run: behave
