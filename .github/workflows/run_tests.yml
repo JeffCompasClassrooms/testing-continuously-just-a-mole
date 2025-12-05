@@ -10,9 +10,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with: 
+          repository:JeffCompasClassrooms/testing-units-f25-just-a-mole
 
-      # ---- your tests go here ----
-      - name: Run test for repo 
-        run: |
-          echo "Running tests..."
-          # replace this line with your actual test command(s)
+      - name: install pytest
+        run: pip install pytest
+
+      - name: run pytest
+        run: pytest
