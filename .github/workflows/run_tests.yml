@@ -5,7 +5,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  run-tests:
+  run-unit-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,16 +18,20 @@ jobs:
       - name: run pytest
         run: pytest
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with: 
-          repository: JeffCompasClassrooms/testing-systems-just-a-mole
+  jobs:
+    run-system-test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+          with: 
+            repository: JeffCompasClassrooms/testing-systems-just-a-mole
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
+        - name: Checkout repository
+          uses: actions/checkout@v4
 
-      - name: install pytest
-        run: pip install pytest pytest-spec pytest-describe
+        - name: install pytest
+          run: pip install pytest pytest-spec pytest-describe
 
-      - name: run pytest
-        run: pytest --spec
+        - name: run pytest
+          run: pytest --spec
