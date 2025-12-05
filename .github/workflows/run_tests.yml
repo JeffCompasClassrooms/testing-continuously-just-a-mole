@@ -18,12 +18,11 @@ jobs:
       - name: run pytest
         run: pytest
 
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with: 
           repository: JeffCompasClassrooms/testing-systems-just-a-mole
-          
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
